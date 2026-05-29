@@ -12,6 +12,8 @@ public class Compass : MonoBehaviour
     [SerializeField] [Range(0.1f, 1f)] private float pendulumDuration = 0.5f;
     [SerializeField] private int pendulumCycles = 5;
     [SerializeField] private float pendulumWobbleDur = 2.0f;
+    [SerializeField] private float pendulumMinAngle = 90f;
+    [SerializeField] private float pendulumMaxAngle = 270f;
 
     [Header("Wobble")] 
     [SerializeField] private float wobbleStrength = 8f;
@@ -25,29 +27,26 @@ public class Compass : MonoBehaviour
     {
         if (_pendulumSequence != null && _pendulumSequence.IsActive())
             _pendulumSequence.Kill();
-        
-        float minAngle = 90f;
-        float maxAngle = 270f;
-        
-        float finalAngle = Random.Range(minAngle, maxAngle);
-        float finalSpeed = (finalAngle-minAngle) * pendulumDuration / (maxAngle - minAngle);
+
+        float finalAngle = Random.Range(pendulumMinAngle, pendulumMaxAngle);
+        float finalSpeed = (finalAngle-pendulumMinAngle) * pendulumDuration / (pendulumMaxAngle - pendulumMinAngle);
 
         _pendulumSequence = DOTween.Sequence();
         
-        transform.localRotation = Quaternion.Euler(0f, minAngle, 0f);
+        transform.localRotation = Quaternion.Euler(0f, pendulumMinAngle, 0f);
 
         for (int i = 0; i < pendulumCycles; i++)
         {
             _pendulumSequence.Append(
                 transform.DOLocalRotate(
-                    new Vector3(0f, maxAngle, 0f),
+                    new Vector3(0f, pendulumMaxAngle, 0f),
                     pendulumDuration
                 ).SetEase(Ease.Linear)
             );
 
             _pendulumSequence.Append(
                 transform.DOLocalRotate(
-                    new Vector3(0f, minAngle, 0f),
+                    new Vector3(0f, pendulumMinAngle, 0f),
                     pendulumDuration
                 ).SetEase(Ease.Linear)
             );

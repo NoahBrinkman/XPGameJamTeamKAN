@@ -308,6 +308,8 @@ MonoBehaviour:
   pendulumDuration: 0.14
   pendulumCycles: 5
   pendulumWobbleDur: 0.2
+  pendulumMinAngle: 300
+  pendulumMaxAngle: 380
   wobbleStrength: 10
   wobbleVibrato: 2
   wobbleDuration: 3
