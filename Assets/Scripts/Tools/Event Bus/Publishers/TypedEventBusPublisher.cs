@@ -18,7 +18,12 @@ namespace EventBus
             if(clearAfterPublish)  EventBusManager.Instance.UnSubScribeAllSubScribedListeners<T>(eventName);
             onPublished?.Invoke();
         }
-        
+
+        public void SetValueAndPublish(T value)
+        {
+            this.value = value;
+            Publish();
+        }
         
         
         public void SetValue(T value)

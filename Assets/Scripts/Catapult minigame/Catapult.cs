@@ -16,8 +16,17 @@ public class Catapult : MonoBehaviour
 
     [SerializeField] private float launchSpeed = 15;
     [SerializeField] private float launchHeightMultiplier = 1.5f;
+    [SerializeField] private AudioSource sfxSource;
 
-    private float timer = 0.0f;
+    [SerializeField] private float gameDuration = 10;
+    private bool gameTimerActive = false;
+    private float gameTimer;
+
+    [SerializeField] private float timeAfterLastShot = 2;
+    private bool lastShotTimerActive = false;
+    private float lastShotTimer = 0;
+    
+    private float swingTimer = 0.0f;
         
     [SerializeField] private bool isSwinging = false;
 
@@ -25,19 +34,30 @@ public class Catapult : MonoBehaviour
     private int shotsLeft = 0;
 
     private IntPublisher shotPublisher;
-
+    
+    [SerializeField] private IntPublisher gameOverPublisher;
+    private int score = 0;
+    
     private void OnEnable()
     {
         shotPublisher = GetComponent<IntPublisher>();
         
     }
 
+    public void AddToScore()
+    {
+        score++;
+    }
+    
     [ButtonMethod]
     public void StartMiniGame()
     {
+        gameTimer = gameDuration;
         shotsLeft = shots;
-        timer = 0.0f;
+        swingTimer = 0.0f;
+        lastShotTimer = timeAfterLastShot;
         isSwinging = true;
+        gameTimerActive = true;
         if (shotPublisher != null)
         {
             shotPublisher.SetValue(shotsLeft);
@@ -49,7 +69,7 @@ public class Catapult : MonoBehaviour
 
     private void Shoot(InputAction.CallbackContext obj)
     {
-        if (isSwinging)
+        if (isSwinging && shotsLeft > 0)
         {
             shotsLeft--;
             if (shotPublisher != null)
@@ -65,6 +85,12 @@ public class Catapult : MonoBehaviour
             var direction = transform.forward;
             direction.y += launchHeightMultiplier;
             ball.GetComponent<Rigidbody>().AddForce(direction.normalized * launchSpeed, ForceMode.Impulse);
+            if(sfxSource != null) sfxSource.Play();
+            if (shotsLeft == 0 && gameTimer > lastShotTimer)
+            {
+                lastShotTimerActive = true;
+                lastShotTimer = timeAfterLastShot;
+            }
         }
     }
 
@@ -74,14 +100,33 @@ public class Catapult : MonoBehaviour
     {
         if (isSwinging)
         {
-            timer += Time.deltaTime;
-            float t = 0.5f + Mathf.Sin(timer * swingSpeed)/ 2;
+            swingTimer += Time.deltaTime;
+            float t = 0.5f + Mathf.Sin(swingTimer * swingSpeed)/ 2;
             Vector3 eulerAngles = transform.localEulerAngles;
             eulerAngles.y = Mathf.Lerp(-(swingRadius/2), swingRadius/2, t);
             transform.localEulerAngles = eulerAngles;
+            if (gameTimerActive)
+                gameTimer -= Time.deltaTime;
+            if(lastShotTimerActive)
+                lastShotTimer -= Time.deltaTime;
+
+            if (gameTimer <= 0 || lastShotTimer <= 0)
+            {
+                EndGame();
+            }
+
         }
     }
 
+    public void EndGame()
+    {
+        isSwinging = false;
+        gameTimerActive = false;
+        lastShotTimerActive = false;
+        gameOverPublisher.SetValueAndPublish(score);
+        Debug.Log($"Tin can mini game ended with score {score}");
+    }
+    
     private void OnDrawGizmos()
     {
         var direction = transform.forward;
