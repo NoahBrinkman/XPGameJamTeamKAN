@@ -7,6 +7,7 @@ TagManager:
   - Ball
   - Bounds
   - City
+  - Tutorial
   layers:
   - Default
   - TransparentFX
