@@ -74,7 +74,7 @@ public class Compass : MonoBehaviour
                 20,
                 0.8f
             )
-        );
+        ).OnComplete(PublishAngle);
 
         _pendulumSequence.Play();
     }

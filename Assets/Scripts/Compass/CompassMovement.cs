@@ -26,6 +26,15 @@ public class CompassMovement : MonoBehaviour
             OnComplete(() =>_rb.AddRelativeForce(Vector3.forward * 200f, ForceMode.Force));
     }
 
+    public void AllowMovement(bool canMove)
+    {
+        if (canMove)
+        {
+            _rb.isKinematic = false;
+            _rb.useGravity = true;
+        }
+    }
+
     private void OnCollisionEnter(Collision col)
     {
         if (col.gameObject.CompareTag("Bounds"))
@@ -33,6 +42,18 @@ public class CompassMovement : MonoBehaviour
             float speed = _velocity.magnitude;
             Vector3 dir = Vector3.Reflect(_velocity.normalized, col.contacts[0].normal);
             _rb.linearVelocity = dir * speed;
+        }
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.CompareTag("City"))
+        {
+            Debug.Log("CITY!");
+            _rb.isKinematic = true;
+            _rb.useGravity = false;
+            transform.position = other.gameObject.transform.position;
+            other.gameObject.GetComponent<BoxCollider>().enabled = false;
         }
     }
 }
