@@ -1,5 +1,6 @@
 using System;
 using DG.Tweening;
+using EventBus;
 using MyBox;
 using UnityEngine;
 
@@ -10,6 +11,8 @@ public class CompassMovement : MonoBehaviour
 
     private Vector3 _velocity;
 
+    [SerializeField] private GameObjectPublisher cityHitPublisher;
+    
     private void Awake()
     {
         _rb = GetComponent<Rigidbody>();
@@ -54,6 +57,12 @@ public class CompassMovement : MonoBehaviour
             _rb.useGravity = false;
             transform.position = other.gameObject.transform.position;
             other.gameObject.GetComponent<BoxCollider>().enabled = false;
+            var city = other.GetComponent<City>();
+            if (city != null)
+            {
+                city.MeshSwap();
+            }
+            cityHitPublisher?.SetValueAndPublish(other.gameObject);
         }
     }
 }

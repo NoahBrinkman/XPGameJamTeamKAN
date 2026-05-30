@@ -4461,6 +4461,114 @@ Transform:
   - {fileID: 2139244770}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &1282919718
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 3484429474472248237, guid: 4bab1d591de2551498375b6c0b06a397, type: 3}
+      propertyPath: m_Name
+      value: MinigameUnloader
+      objectReference: {fileID: 0}
+    - target: {fileID: 8436309674357797296, guid: 4bab1d591de2551498375b6c0b06a397, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 156.67163
+      objectReference: {fileID: 0}
+    - target: {fileID: 8436309674357797296, guid: 4bab1d591de2551498375b6c0b06a397, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8436309674357797296, guid: 4bab1d591de2551498375b6c0b06a397, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 87.9624
+      objectReference: {fileID: 0}
+    - target: {fileID: 8436309674357797296, guid: 4bab1d591de2551498375b6c0b06a397, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8436309674357797296, guid: 4bab1d591de2551498375b6c0b06a397, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8436309674357797296, guid: 4bab1d591de2551498375b6c0b06a397, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8436309674357797296, guid: 4bab1d591de2551498375b6c0b06a397, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8436309674357797296, guid: 4bab1d591de2551498375b6c0b06a397, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8436309674357797296, guid: 4bab1d591de2551498375b6c0b06a397, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8436309674357797296, guid: 4bab1d591de2551498375b6c0b06a397, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 5308025819395459560, guid: 4bab1d591de2551498375b6c0b06a397, type: 3}
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 3484429474472248237, guid: 4bab1d591de2551498375b6c0b06a397, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1282919721}
+  m_SourcePrefab: {fileID: 100100000, guid: 4bab1d591de2551498375b6c0b06a397, type: 3}
+--- !u!1 &1282919719 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3484429474472248237, guid: 4bab1d591de2551498375b6c0b06a397, type: 3}
+  m_PrefabInstance: {fileID: 1282919718}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1282919720 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7064613971424638909, guid: 4bab1d591de2551498375b6c0b06a397, type: 3}
+  m_PrefabInstance: {fileID: 1282919718}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1282919719}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: de04cea0445e41d4b8a7c38e43b78dca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::MinigameUnloader
+--- !u!114 &1282919721
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1282919719}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5248037dccad430da1bf6edc3b199b23, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EventBus.FloatListener
+  overrideEventNameSelection: 0
+  eventName: 'Tame Game: End'
+  overriddenEventName: 
+  subscribeOnEnable: 1
+  callBack:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1282919720}
+        m_TargetAssemblyTypeName: MinigameUnloader, Assembly-CSharp
+        m_MethodName: EndTameGame
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1290085213
 GameObject:
   m_ObjectHideFlags: 0
@@ -6084,9 +6192,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b1450cffdbc047949b5f313026a5e1b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EventBus.EventBusListener
-  overrideEventNameSelection: 0
+  overrideEventNameSelection: 1
   eventName: 'Tame: Start'
-  overriddenEventName: 
+  overriddenEventName: 'SceneLoader: StartMinigame'
   subscribeOnEnable: 1
   callBackAction:
     m_PersistentCalls:
@@ -7123,9 +7231,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b1450cffdbc047949b5f313026a5e1b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EventBus.EventBusListener
-  overrideEventNameSelection: 0
+  overrideEventNameSelection: 1
   eventName: 'Tame: Start'
-  overriddenEventName: 
+  overriddenEventName: 'SceneLoader: StartMinigame'
   subscribeOnEnable: 1
   callBackAction:
     m_PersistentCalls:
@@ -8758,3 +8866,4 @@ SceneRoots:
   - {fileID: 1717485670}
   - {fileID: 1316524528}
   - {fileID: 1417127656}
+  - {fileID: 1282919718}
