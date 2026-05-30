@@ -11,19 +11,19 @@ public class MainMenu : MonoBehaviour
     [SerializeField] private Transform director;
     [SerializeField] private Transform clown1;
     [SerializeField] private Transform clown2;
-    [SerializeField] private Transform clown3;
-    [SerializeField] private Transform clown4;
-    [SerializeField] private Transform clown5;
     [SerializeField] private Transform pedestal;
-    [SerializeField] private Transform car;
 
     [SerializeField] private List<TMP_Text> texts;
     [SerializeField] private List<Image> images;
     [SerializeField] private Image widePanel;
     [SerializeField] private TMP_Text storyText;
     [SerializeField] private TMP_Text signature;
+    [SerializeField] private Image buttonStart;
+    [SerializeField] private TMP_Text buttonText;
 
     [SerializeField] private Transform directorGoal;
+
+    private bool _isTutorial;
     
 
     public void Story()
@@ -51,6 +51,23 @@ public class MainMenu : MonoBehaviour
             image.DOFade(0, 1.5f).OnComplete(() => image.gameObject.SetActive(false));
         }
 
+    }
+
+    public void SelectGameMode()
+    {
+        if (_isTutorial)
+        {
+            //StartTutorial
+        }
+        else
+        {
+            //StartGame
+        }
+    }
+
+    public void SetTutorial(bool isTutorial)
+    {
+        _isTutorial = isTutorial;
     }
 
     private void YankOut(Transform clown, Vector3 newPosition)
