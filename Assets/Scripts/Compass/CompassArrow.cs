@@ -30,8 +30,9 @@ public class Compass : MonoBehaviour
     private Sequence _spinSequence;
     private Sequence _pendulumSequence;
     private FloatPublisher _newAngle;
-    
 
+    private bool angleChanged = false;
+    
     private void Awake()
     {
         _newAngle = GetComponent<FloatPublisher>();
@@ -42,10 +43,16 @@ public class Compass : MonoBehaviour
         powerActive = true;
         pendulumMinAngle = data.minAngle;
         pendulumMaxAngle = data.maxAngle;
+        angleChanged = true;
     }
+    
 
     public void Spin()
     {
+        if (angleChanged)
+        {
+            SceneLoaderManager.Instance?.ScoreStorer.ResetScores();
+        }
         if(powerActive)
         {   
             Debug.Log("Pendulum");

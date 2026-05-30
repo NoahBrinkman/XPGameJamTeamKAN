@@ -46,7 +46,7 @@ public class TameInputHandler : MonoBehaviour, IPointerEnterHandler, IPointerExi
                 {
                     //early game over cuz you won!
                     gameStarted = false;
-                    finishGamePublisher.Publish();
+                    finishGamePublisher.SetValueAndPublish(fillAmount);
                 }
             }
             else
@@ -67,7 +67,6 @@ public class TameInputHandler : MonoBehaviour, IPointerEnterHandler, IPointerExi
                 gameStarted = false;
                 sfxSourceUp.Stop();
                 sfxSourceDown.Stop();
-                
                 finishGamePublisher.SetValueAndPublish(fillAmount);
             }
         }
