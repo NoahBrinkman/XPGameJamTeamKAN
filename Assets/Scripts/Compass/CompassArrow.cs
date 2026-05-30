@@ -1,5 +1,8 @@
+using System;
 using DG.Tweening;
+using EventBus;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 public class Compass : MonoBehaviour
 {
@@ -22,6 +25,12 @@ public class Compass : MonoBehaviour
 
     private Sequence _spinSequence;
     private Sequence _pendulumSequence;
+    private FloatPublisher _newAngle;
+
+    private void Awake()
+    {
+        _newAngle = GetComponent<FloatPublisher>();
+    }
 
     public void Pendulum()
     {
@@ -86,7 +95,8 @@ public class Compass : MonoBehaviour
             new Vector3(0f, totalAngle, 0f),
             spinDuration,
             RotateMode.FastBeyond360
-        ).SetEase(Ease.OutCubic));
+        ).SetEase(Ease.OutCubic)).
+            OnComplete(PublishAngle);
 
         _spinSequence.Insert(0.7f * spinDuration, transform.DOPunchRotation(
             new Vector3(0f, wobbleStrength, 0f),
@@ -94,7 +104,12 @@ public class Compass : MonoBehaviour
             wobbleVibrato,
             0.8f
         ));
-
         _spinSequence.Play();
+    }
+
+    private void PublishAngle()
+    {
+        _newAngle.SetValue(transform.localEulerAngles.y);
+        _newAngle.Publish();
     }
 }
