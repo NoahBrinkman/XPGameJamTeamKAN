@@ -39,4 +39,12 @@ public class MinigameScoreStorer : MonoBehaviour
         MostRecentPopcornScore = -1;
         MostRecentTamingScore = score;
     }
+
+    public void ResetScores()
+    {
+        CompletedMostRecentClownSays = -1;
+        MostRecentTinCan = -1;
+        MostRecentPopcornScore = -1;
+        MostRecentTamingScore = -1;
+    }
 }

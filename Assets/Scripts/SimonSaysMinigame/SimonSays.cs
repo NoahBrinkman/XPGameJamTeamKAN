@@ -25,7 +25,7 @@ public class SimonSays : MonoBehaviour
     private IntPublisher _tries;
     [SerializeField] private EventBusPublisher _correct;
     [SerializeField] private EventBusPublisher _incorrect;
-    [SerializeField] private EventBusPublisher _finish;
+    [SerializeField] private IntPublisher _finish;
     private int _try = 3;
     private List<Transform> _clownsToUse = new();
     [SerializeField] private List<AudioSource> beepsources = new();
@@ -126,6 +126,8 @@ public class SimonSays : MonoBehaviour
                 _try--;
                 if (_try <= 0)
                 {
+                    _finish.SetValue(0);
+                    SceneLoaderManager.Instance.ScoreStorer.SetClownSaysScore(0);
                     StartCoroutine(WaitAndFinish());
                 }
                 Debug.Log(_try);
@@ -135,6 +137,9 @@ public class SimonSays : MonoBehaviour
             if (_currentTry >= _correctSequence.Count)
             {
                 Debug.Log("DONE");
+                _finish.SetValueAndPublish(1);
+                
+                SceneLoaderManager.Instance.ScoreStorer.SetClownSaysScore(1);
                 foreach (var clown in clowns)
                 {
                     var currentPosition = clown.transform.position;
@@ -154,6 +159,7 @@ public class SimonSays : MonoBehaviour
     {
         yield return new WaitForSeconds(0.3f);
         _finish.Publish();
+        SceneLoaderManager.Instance.UnloadMinigameScene();
     }
 
 }

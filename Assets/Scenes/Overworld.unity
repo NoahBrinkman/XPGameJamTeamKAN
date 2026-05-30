@@ -491,7 +491,7 @@ GameObject:
   - component: {fileID: 263412317}
   - component: {fileID: 263412316}
   m_Layer: 5
-  m_Name: Button (3)
+  m_Name: East
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -514,7 +514,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -96, y: 196}
+  m_AnchoredPosition: {x: -217.52777, y: 190}
   m_SizeDelta: {x: 50, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &263412316
@@ -1051,6 +1051,7 @@ Transform:
   - {fileID: 1045482019}
   - {fileID: 1510355988}
   - {fileID: 830686433}
+  - {fileID: 1356696358}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &389330808
@@ -1904,7 +1905,7 @@ GameObject:
   - component: {fileID: 714691848}
   - component: {fileID: 714691847}
   m_Layer: 5
-  m_Name: Button
+  m_Name: Spin
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2764,11 +2765,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::SceneLoaderManager
   transitionHandler: {fileID: 951444506}
   overWorldScene: Overworld
+  endScene: EndScene
   overworldSceneLoadedPublisher: {fileID: 540907177}
   overworldSceneUnLoadedPublisher: {fileID: 406029978}
   startMinigamePublisher: {fileID: 1901377508}
-  delaybeforeStart: 2
+  delaybeforeStart: 1.2
   scoreStorer: {fileID: 2013016105}
+  SessionStarted: 0
+  minigamesToComplete: 4
 --- !u!1 &951444500
 GameObject:
   m_ObjectHideFlags: 0
@@ -3963,7 +3967,7 @@ GameObject:
   - component: {fileID: 1250689908}
   - component: {fileID: 1250689907}
   m_Layer: 5
-  m_Name: Button (6)
+  m_Name: NorthWest
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3986,7 +3990,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -182.43056, y: 200}
+  m_AnchoredPosition: {x: -31.333294, y: 190}
   m_SizeDelta: {x: 50, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1250689907
@@ -4174,7 +4178,7 @@ GameObject:
   - component: {fileID: 1347062489}
   - component: {fileID: 1347062488}
   m_Layer: 5
-  m_Name: Button (8)
+  m_Name: SouthWest
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4197,7 +4201,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 176.05554, y: 204.95833}
+  m_AnchoredPosition: {x: 107.70834, y: 190}
   m_SizeDelta: {x: 50, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1347062488
@@ -4314,6 +4318,60 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1347062486}
   m_CullTransparentMesh: 1
+--- !u!1 &1356696357
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1356696358}
+  - component: {fileID: 1356696359}
+  m_Layer: 0
+  m_Name: ScoreButtonSetter
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1356696358
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1356696357}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 321072583}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1356696359
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1356696357}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7c9c29a3d753bee428dd69499fa0c0a0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: '::'
+  easyButtons:
+  - {fileID: 1760629050}
+  - {fileID: 1667649517}
+  - {fileID: 263412317}
+  - {fileID: 1981575634}
+  hardButtons:
+  - {fileID: 1520411703}
+  - {fileID: 1250689908}
+  - {fileID: 1375066186}
+  - {fileID: 1347062489}
 --- !u!1 &1357060417
 GameObject:
   m_ObjectHideFlags: 0
@@ -4403,7 +4461,7 @@ GameObject:
   - component: {fileID: 1375066186}
   - component: {fileID: 1375066185}
   m_Layer: 5
-  m_Name: Button (7)
+  m_Name: SouthEast
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4426,7 +4484,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -27.069427, y: 199.68056}
+  m_AnchoredPosition: {x: 37.22226, y: 190}
   m_SizeDelta: {x: 50, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1375066185
@@ -4917,7 +4975,7 @@ GameObject:
   - component: {fileID: 1520411703}
   - component: {fileID: 1520411702}
   m_Layer: 5
-  m_Name: Button (5)
+  m_Name: North East
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4940,7 +4998,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -301.97223, y: 196.59445}
+  m_AnchoredPosition: {x: -97.749985, y: 190}
   m_SizeDelta: {x: 50, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1520411702
@@ -5103,7 +5161,7 @@ GameObject:
   - component: {fileID: 1667649517}
   - component: {fileID: 1667649516}
   m_Layer: 5
-  m_Name: Button (2)
+  m_Name: South
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5126,7 +5184,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -234.91664, y: 198.65277}
+  m_AnchoredPosition: {x: -290.4722, y: 190}
   m_SizeDelta: {x: 50, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1667649516
@@ -5334,7 +5392,7 @@ GameObject:
   - component: {fileID: 1760629050}
   - component: {fileID: 1760629049}
   m_Layer: 5
-  m_Name: Button (1)
+  m_Name: North
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5357,7 +5415,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -359.1111, y: 197.29999}
+  m_AnchoredPosition: {x: -359.1111, y: 190}
   m_SizeDelta: {x: 50, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1760629049
@@ -6011,7 +6069,7 @@ GameObject:
   - component: {fileID: 1981575634}
   - component: {fileID: 1981575633}
   m_Layer: 5
-  m_Name: Button (4)
+  m_Name: West
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6034,7 +6092,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 59.5278, y: 207.7361}
+  m_AnchoredPosition: {x: -156.09718, y: 190}
   m_SizeDelta: {x: 50, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1981575633
