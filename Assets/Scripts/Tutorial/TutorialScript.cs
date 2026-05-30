@@ -1,30 +1,19 @@
+using System;
 using DG.Tweening;
 using EventBus;
 using UnityEngine;
 
 public class TutorialScript : MonoBehaviour
 {
-     [Header("Spin")] 
-    [SerializeField] [Range(2f, 5f)] private float spinDuration = 2.5f;
-    [SerializeField] private int minSpins = 5;
-    [SerializeField] private int maxSpins = 8;
-
     private float _spinDuration = 2.5f;
     private int _spins = 10;
     private float _spinAngle = 140f;
     private float _pendulumDuration = 0.14f;
     private int _pendulumCycles = 5;
     private float _wobbleDuration = 0.2f;
-    private float _pendulumAngle;
+    private float _pendulumAngle = 230f;
     private float _pendMinAngle;
     private float _pendMaxAngle;
-
-    [Header("Pendulum")] 
-    [SerializeField] [Range(0.1f, 1f)] private float pendulumDuration = 0.5f;
-    [SerializeField] private int pendulumCycles = 5;
-    [SerializeField] private float pendulumWobbleDur = 2.0f;
-    [SerializeField] public float pendulumMinAngle = 90f;
-    [SerializeField] public float pendulumMaxAngle = 270f;
 
     [Header("Wobble")] 
     [SerializeField] private float wobbleStrength = 8f;
@@ -42,6 +31,7 @@ public class TutorialScript : MonoBehaviour
     private void Awake()
     {
         _newAngle = GetComponent<FloatPublisher>();
+        
     }
 
     public void SetDirection(DirectionsData data)
@@ -135,10 +125,7 @@ public class TutorialScript : MonoBehaviour
     {
         if (_spinSequence != null && _spinSequence.IsActive())
             _spinSequence.Kill();
-        
-        // float finalAngle = Random.Range(0f, 360f);
-        // int spins = Random.Range(10, 12 + 1);
-        
+
         float totalAngle = (360 * _spins) + _spinAngle;
         
         _spinSequence = DOTween.Sequence();
@@ -157,6 +144,7 @@ public class TutorialScript : MonoBehaviour
             0.8f
         ));
         _spinSequence.Play();
+        
     }
 
     private void PublishAngle()
