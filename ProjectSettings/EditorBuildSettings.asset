@@ -6,7 +6,28 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/SampleScene.unity
-    guid: 99c9720ab356a0642a771bea13969a05
+    path: Assets/Scenes/MainMenu.unity
+    guid: d46f51d7ba88c485f9efc7fa4a51a374
+  - enabled: 1
+    path: Assets/Scenes/Overworld.unity
+    guid: 946424182a541824499c41f73ee521d0
+  - enabled: 1
+    path: Assets/Scenes/Tutorial.unity
+    guid: 988c6ff96faba48efbf1753a1cbcd0c4
+  - enabled: 1
+    path: Assets/Scenes/PopCornGame.unity
+    guid: 0688be0c44e9b874e8625aac48087556
+  - enabled: 1
+    path: Assets/Scenes/TamingMinigame.unity
+    guid: fd8f2362e5e3abd4595c7129e4c022c7
+  - enabled: 1
+    path: Assets/Scenes/TinCanGame.unity
+    guid: 10500a4d3b4097f4bacef6f72a88e3e4
+  - enabled: 1
+    path: Assets/Scenes/ClownSaysGame.unity
+    guid: cd5ff2b83fc184b74929f50ae0fbcc81
+  - enabled: 1
+    path: Assets/Scenes/EndScene.unity
+    guid: 5f57148394601204b815d341ba7c57ef
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}
