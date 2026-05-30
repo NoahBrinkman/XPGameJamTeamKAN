@@ -23,6 +23,9 @@ public class SimonSays : MonoBehaviour
     private int _currentTry;
     private static readonly int EmissionColor = Shader.PropertyToID("_EmissionColor");
     private IntPublisher _tries;
+    [SerializeField] private EventBusPublisher _correct;
+    [SerializeField] private EventBusPublisher _incorrect;
+    [SerializeField] private EventBusPublisher _finish;
     private int _try = 3;
     private List<Transform> _clownsToUse = new();
     
@@ -54,6 +57,11 @@ public class SimonSays : MonoBehaviour
             _clownsToUse[i].transform.rotation = positions[i].transform.rotation;
         }
         
+        foreach (var clown in clowns)
+        {
+            clown.GetComponent<BoxCollider>().enabled = false;
+        }
+        
         StartCoroutine(ExampleCoroutine());
     }
 
@@ -64,12 +72,19 @@ public class SimonSays : MonoBehaviour
             int rand = Random.Range(0, 4);
             lights[i].color = colors[rand];
             _correctSequence.Add(rand);
+            //BEEP
             yield return new WaitForSeconds(0.8f);
         }
+        //BEEEEEEP
         yield return new WaitForSeconds(0.3f);
         foreach (var light in lights)
         {
             light.color = Color.white;
+        }
+
+        foreach (var clown in clowns)
+        {
+            clown.GetComponent<BoxCollider>().enabled = true;
         }
 
         foreach (var number in _correctSequence)
@@ -90,6 +105,7 @@ public class SimonSays : MonoBehaviour
             if (_correctSequence[_currentTry] == clownId)
             {
                 Debug.Log("CORRECT");
+                _correct.Publish();
                 var currentPosition = clowns[clownId].transform.position;
                 clowns[clownId].transform.DOJump(currentPosition, 0.6f, 1, 0.15f);
                 _currentTry++;
@@ -97,12 +113,17 @@ public class SimonSays : MonoBehaviour
             else
             {
                 Debug.Log("INCORRECT");
+                _incorrect.Publish();
                 foreach (var light in lights)
                 {
                     light.transform.DOShakePosition(0.6f, new Vector3(4f, 0 , 4f));
                 }
                 _currentTry = 0;
                 _try--;
+                if (_try <= 0)
+                {
+                    StartCoroutine(WaitAndFinish());
+                }
                 Debug.Log(_try);
                 _tries.SetValueAndPublish(_try);
             }
@@ -117,20 +138,18 @@ public class SimonSays : MonoBehaviour
                     var finalRotation = clown.transform.rotation.y + 540;
                     clown.transform.DORotate(new Vector3(0, finalRotation, 0), 0.5f, RotateMode.FastBeyond360);
                 }
+
+                StartCoroutine(WaitAndFinish());
                 _currentTry = 0;
             }
         }
         
     }
-    
-    IEnumerator GlowForSecond(int clownId)
+
+    IEnumerator WaitAndFinish()
     {
-        var material = clowns[clownId].transform.GetComponentInChildren<MeshRenderer>().material;
-        Color currentEmission = material.GetColor(EmissionColor);
-        Color newEmission = colors[clownId];
-        material.SetColor(EmissionColor, newEmission * -2f);
-        yield return new WaitForSeconds(1);
-        material.SetColor(EmissionColor, currentEmission);
+        yield return new WaitForSeconds(0.3f);
+        _finish.Publish();
     }
-    
+
 }
