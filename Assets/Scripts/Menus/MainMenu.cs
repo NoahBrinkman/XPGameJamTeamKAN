@@ -34,6 +34,8 @@ public class MainMenu : MonoBehaviour
         directorMove.Join(widePanel.DOFade(1, 3f));
         directorMove.Append(storyText.DOFade(1, 2f));
         directorMove.Join(signature.DOFade(1, 2f));
+        directorMove.Join(buttonStart.DOFade(1, 2f));
+        directorMove.Join(buttonText.DOFade(1, 2f));
         
         YankOut(clown1, new Vector3(0.1f, 8.69f, -4f));
         YankOut(clown2, new Vector3(5.1f,-8f,-2.4f));
