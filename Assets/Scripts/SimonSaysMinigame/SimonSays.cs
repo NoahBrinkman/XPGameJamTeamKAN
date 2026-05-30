@@ -28,6 +28,8 @@ public class SimonSays : MonoBehaviour
     [SerializeField] private EventBusPublisher _finish;
     private int _try = 3;
     private List<Transform> _clownsToUse = new();
+    [SerializeField] private List<AudioSource> beepsources = new();
+    
     
     public static void Shuffle<T>(IList<T> ts) {
         var count = ts.Count;
@@ -73,9 +75,11 @@ public class SimonSays : MonoBehaviour
             lights[i].color = colors[rand];
             _correctSequence.Add(rand);
             //BEEP
+            beepsources[i].Play();
             yield return new WaitForSeconds(0.8f);
         }
         //BEEEEEEP
+        beepsources[beepsources.Count - 1].Play();
         yield return new WaitForSeconds(0.3f);
         foreach (var light in lights)
         {
