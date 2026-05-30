@@ -12,6 +12,7 @@ public class CompassMovement : MonoBehaviour
     private Vector3 _velocity;
 
     [SerializeField] private GameObjectPublisher cityHitPublisher;
+    [SerializeField] private EventBusPublisher tutorialPublisher;
     
     private void Awake()
     {
@@ -63,6 +64,11 @@ public class CompassMovement : MonoBehaviour
                 city.MeshSwap();
             }
             cityHitPublisher?.SetValueAndPublish(other.gameObject);
+        }
+
+        if (other.gameObject.CompareTag("Tutorial"))
+        {
+            tutorialPublisher.Publish();
         }
     }
 }
