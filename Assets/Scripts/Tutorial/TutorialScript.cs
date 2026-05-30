@@ -26,6 +26,7 @@ public class TutorialScript : MonoBehaviour
     private Sequence _spinSequence;
     private Sequence _pendulumSequence;
     private FloatPublisher _newAngle;
+    private int _spinCount;
     
 
     private void Awake()
@@ -48,9 +49,14 @@ public class TutorialScript : MonoBehaviour
             Debug.Log("Pendulum");
             Pendulum();
         }
-        else
+        else if (_spinCount == 1)
         {
             FullSpin();
+        }
+        else
+        {
+            FullSpinNoDrive();
+            _spinCount++;
         }
     }
 
@@ -145,6 +151,30 @@ public class TutorialScript : MonoBehaviour
         ));
         _spinSequence.Play();
         
+    }
+
+    private void FullSpinNoDrive()
+    {
+        if (_spinSequence != null && _spinSequence.IsActive())
+            _spinSequence.Kill();
+
+        float totalAngle = (360 * _spins) + 56f;
+        
+        _spinSequence = DOTween.Sequence();
+
+        _spinSequence.Append(transform.DOLocalRotate(
+                new Vector3(0f, 0f, totalAngle),
+                _spinDuration,
+                RotateMode.FastBeyond360
+            ).SetEase(Ease.OutCubic));
+
+        _spinSequence.Insert(0.7f * _spinDuration, transform.DOPunchRotation(
+            new Vector3(0f, 0f, wobbleStrength),
+            wobbleDuration,
+            wobbleVibrato,
+            0.8f
+        ));
+        _spinSequence.Play();
     }
 
     private void PublishAngle()

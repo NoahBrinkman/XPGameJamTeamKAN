@@ -15,14 +15,22 @@ public class TutorialManager : MonoBehaviour
     [SerializeField] private TMP_Text compassText;
     [SerializeField] private GameObject compassBtn;
     [SerializeField] private TMP_Text compassTxt;
+    [SerializeField] private TMP_Text compassTxt2;
+    [SerializeField] private TMP_Text driveText;
+    [SerializeField] private TMP_Text powerupText;
+    [SerializeField] private GameObject powerBtn;
+    [SerializeField] private TMP_Text cityTxt;
 
-    private float _fadeDuration;
+    private float _fadeDuration = 1.5f;
+    private int _spinCount;
 
     private void Awake()
     {
         city.SetActive(false);
         car.SetActive(false);
+        compass.SetActive(false);
         compassBtn.SetActive(false);
+        powerBtn.SetActive(false);
     }
 
     private void Start()
@@ -44,12 +52,42 @@ public class TutorialManager : MonoBehaviour
         compass.transform.localScale = new Vector3(0.01f, 0.01f, 0.01f);
         compass.SetActive(true);
         compass.transform.DOScale(new Vector3(1, 1, 1), 1f);
-        compassText.DOFade(1, _fadeDuration);
+        compassText.DOFade(1, _fadeDuration).OnComplete(()=> StartCoroutine(WaitBeforeCompassBtn()));
     }
 
     private void ShowCompassBtn()
     {
-        
+        compassBtn.SetActive(true);
+        compassTxt.DOFade(1, _fadeDuration);
+    }
+
+    public void ShowPowerBtn()
+    {
+        powerBtn.SetActive(true);
+        driveText.DOFade(0, _fadeDuration);
+        powerupText.DOFade(1, _fadeDuration);
+    }
+
+    public void ShowCityText()
+    {
+        powerupText.DOFade(0, _fadeDuration);
+        cityTxt.DOFade(1, _fadeDuration);
+    }
+
+    public void Show()
+    {
+        if (_spinCount == 0)
+        {
+            compassTxt.DOFade(0, _fadeDuration);
+            compassTxt2.DOFade(1, _fadeDuration);
+            _spinCount = 1;
+        }
+        else if (_spinCount == 1)
+        {
+            compassTxt2.DOFade(0, _fadeDuration);
+            driveText.DOFade(1, _fadeDuration);
+            _spinCount = 2;
+        }
     }
     
     
@@ -69,6 +107,6 @@ public class TutorialManager : MonoBehaviour
     {
         yield return new WaitForSeconds(4);
         Sequence sequence = DOTween.Sequence();
-        sequence.Append(compassText.DOFade(0, _fadeDuration)).OnComplete(()=>ShowCompass());
+        sequence.Append(compassText.DOFade(0, _fadeDuration)).OnComplete(()=>ShowCompassBtn());
     }
 }

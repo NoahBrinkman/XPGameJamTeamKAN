@@ -520,7 +520,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &302811461
 Transform:
   m_ObjectHideFlags: 0
@@ -1389,8 +1389,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'When we succeed in a show, the city folk helps us fix the compass. We
-    put the fixes on tickets. To keep the circus spirit. '
+  m_text: When we succeed in a show, the city folk helps us fix the compass. We put
+    the fixes on tickets. To keep the circus spirit. Activate the ticket!
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 2472c6d80366f4ec386ed2c7d94fd232, type: 2}
   m_sharedMaterial: {fileID: 2798682862021318641, guid: 2472c6d80366f4ec386ed2c7d94fd232, type: 2}
@@ -1417,8 +1417,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 23.6
-  m_fontSizeBase: 23.6
+  m_fontSize: 21.92
+  m_fontSizeBase: 21.92
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -1427,7 +1427,7 @@ MonoBehaviour:
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 512
   m_textAlignment: 65535
-  m_characterSpacing: 5.42
+  m_characterSpacing: 4.03
   m_characterHorizontalScale: 1
   m_wordSpacing: 0
   m_lineSpacing: 0
@@ -1833,8 +1833,13 @@ MonoBehaviour:
   carText: {fileID: 734369158}
   compass: {fileID: 302811460}
   compassText: {fileID: 1993469614}
-  compassBtn: {fileID: 0}
-  compassTxt: {fileID: 0}
+  compassBtn: {fileID: 1848488386}
+  compassTxt: {fileID: 609162704}
+  compassTxt2: {fileID: 777818}
+  driveText: {fileID: 61590608}
+  powerupText: {fileID: 1163064282}
+  powerBtn: {fileID: 1414264310}
+  cityTxt: {fileID: 1312644014}
 --- !u!114 &1214773457
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1857,6 +1862,18 @@ MonoBehaviour:
       - m_Target: {fileID: 1214773456}
         m_TargetAssemblyTypeName: TutorialManager, Assembly-CSharp
         m_MethodName: ActivateCity
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1214773456}
+        m_TargetAssemblyTypeName: TutorialManager, Assembly-CSharp
+        m_MethodName: ShowPowerBtn
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2129,8 +2146,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Use it to reach this city. Cities are our main objectives. That's where
-    we can present our acts. People looove animal taming!
+  m_text: 'Spin the compass with the ticket to reach the city. Cities are our main
+    objectives. That''s where we can present our acts. People looove animal taming! '
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 2472c6d80366f4ec386ed2c7d94fd232, type: 2}
   m_sharedMaterial: {fileID: 2798682862021318641, guid: 2472c6d80366f4ec386ed2c7d94fd232, type: 2}
@@ -2157,8 +2174,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 23.6
-  m_fontSizeBase: 23.6
+  m_fontSize: 19.9
+  m_fontSizeBase: 19.9
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -2242,7 +2259,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1414264311
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2314,6 +2331,18 @@ MonoBehaviour:
         m_Arguments:
           m_ObjectArgument: {fileID: 11400000, guid: 597cfead169c2489a97cf5772bc345a6, type: 2}
           m_ObjectArgumentAssemblyTypeName: DirectionsData, Assembly-CSharp
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1214773456}
+        m_TargetAssemblyTypeName: TutorialManager, Assembly-CSharp
+        m_MethodName: ShowCityText
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -2603,7 +2632,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1848488387
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2671,6 +2700,18 @@ MonoBehaviour:
       - m_Target: {fileID: 1553950535}
         m_TargetAssemblyTypeName: TutorialScript, Assembly-CSharp
         m_MethodName: Spin
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1214773456}
+        m_TargetAssemblyTypeName: TutorialManager, Assembly-CSharp
+        m_MethodName: Show
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
