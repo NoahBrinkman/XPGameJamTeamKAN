@@ -15,7 +15,6 @@ public class MinimapHandler : MonoBehaviour
     private List<GameObject> mapTiles;
     [SerializeField]private float distanceRequiredToReveal = 1;
 
-    [ButtonMethod]
     public void GenerateMap()
     { 
         mapTiles = new List<GameObject>();
