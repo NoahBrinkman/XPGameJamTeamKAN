@@ -3,6 +3,7 @@ using DG.Tweening;
 using EventBus;
 using MyBox;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 public class CompassMovement : MonoBehaviour
 {
@@ -13,6 +14,9 @@ public class CompassMovement : MonoBehaviour
 
     [SerializeField] private GameObjectPublisher cityHitPublisher;
     [SerializeField] private EventBusPublisher tutorialPublisher;
+
+    [SerializeField] private float minimumSpeed = 175f;
+    [SerializeField] private float maximumSpeed = 250f;
     
     private void Awake()
     {
@@ -27,7 +31,7 @@ public class CompassMovement : MonoBehaviour
     public void UpdateAngle(float angle)
     {
         transform.DOLocalRotate(new Vector3(0f, angle, 0f), 0.2f).
-            OnComplete(() =>_rb.AddRelativeForce(Vector3.forward * 200f, ForceMode.Force));
+            OnComplete(() =>_rb.AddRelativeForce(Vector3.forward * Random.Range(minimumSpeed,maximumSpeed), ForceMode.Force));
     }
 
     public void AllowMovement(bool canMove)
