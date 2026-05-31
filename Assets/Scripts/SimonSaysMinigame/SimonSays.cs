@@ -50,6 +50,11 @@ public class SimonSays : MonoBehaviour
 
     private void Start()
     {
+ 
+    }
+    [ButtonMethod]
+    public void StartGame()
+    {
         _tries = GetComponent<IntPublisher>();
         _try = 3;
         Shuffle(_clownsToUse);
@@ -66,7 +71,8 @@ public class SimonSays : MonoBehaviour
         
         StartCoroutine(ExampleCoroutine());
     }
-
+    
+    
     IEnumerator ExampleCoroutine()
     {
         for (int i = 0; i < 4; i++)
@@ -127,7 +133,8 @@ public class SimonSays : MonoBehaviour
                 if (_try <= 0)
                 {
                     _finish.SetValue(0);
-                    SceneLoaderManager.Instance.ScoreStorer.SetClownSaysScore(0);
+                    click.Disable();
+                    SceneLoaderManager.Instance?.ScoreStorer.SetClownSaysScore(0);
                     StartCoroutine(WaitAndFinish());
                 }
                 Debug.Log(_try);
@@ -137,9 +144,10 @@ public class SimonSays : MonoBehaviour
             if (_currentTry >= _correctSequence.Count)
             {
                 Debug.Log("DONE");
+                click.Disable();
                 _finish.SetValueAndPublish(1);
                 
-                SceneLoaderManager.Instance.ScoreStorer.SetClownSaysScore(1);
+                SceneLoaderManager.Instance?.ScoreStorer.SetClownSaysScore(1);
                 foreach (var clown in clowns)
                 {
                     var currentPosition = clown.transform.position;
@@ -159,7 +167,7 @@ public class SimonSays : MonoBehaviour
     {
         yield return new WaitForSeconds(0.3f);
         _finish.Publish();
-        SceneLoaderManager.Instance.UnloadMinigameScene();
+        SceneLoaderManager.Instance?.UnloadMinigameScene();
     }
 
 }

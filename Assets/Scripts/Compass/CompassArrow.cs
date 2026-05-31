@@ -3,6 +3,7 @@ using DG.Tweening;
 using EventBus;
 using UnityEngine;
 using UnityEngine.Serialization;
+using UnityEngine.UI;
 using Random = UnityEngine.Random;
 
 public class Compass : MonoBehaviour
@@ -11,7 +12,9 @@ public class Compass : MonoBehaviour
     [SerializeField] [Range(2f, 5f)] private float spinDuration = 2.5f;
     [SerializeField] private int minSpins = 5;
     [SerializeField] private int maxSpins = 8;
-
+    [SerializeField] private Button spinButton;
+    
+    
     [Header("Pendulum")] 
     [SerializeField] [Range(0.1f, 1f)] private float pendulumDuration = 0.5f;
     [SerializeField] private int pendulumCycles = 5;
@@ -53,6 +56,7 @@ public class Compass : MonoBehaviour
         {
             SceneLoaderManager.Instance?.ScoreStorer.ResetScores();
         }
+        spinButton.interactable = false;
         if(powerActive)
         {   
             Debug.Log("Pendulum");
@@ -162,5 +166,6 @@ public class Compass : MonoBehaviour
     {
         _newAngle.SetValue(transform.localEulerAngles.z);
         _newAngle.Publish();
+        spinButton.interactable = true;
     }
 }

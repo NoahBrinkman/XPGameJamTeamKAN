@@ -29,7 +29,7 @@ public class MinigameUnloader : MonoBehaviour
     IEnumerator EndSays(int score)
     {
         yield return new WaitForSeconds(delay);
-        SceneLoaderManager.Instance.ScoreStoreClownSays(score);
+        SceneLoaderManager.Instance?.ScoreStoreClownSays(score);
     }
     public void EndTinCanGame(int score)
     {
@@ -42,7 +42,7 @@ public class MinigameUnloader : MonoBehaviour
     IEnumerator EndTin(int score)
     {
         yield return new WaitForSeconds(delay);
-        SceneLoaderManager.Instance.ScoreStoreTinCan(score);
+        SceneLoaderManager.Instance?.ScoreStoreTinCan(score);
     }
     public void EndTameGame(float score)
     {
@@ -55,7 +55,7 @@ public class MinigameUnloader : MonoBehaviour
     IEnumerator EndTame(float score)
     {
         yield return new WaitForSeconds(delay);
-        SceneLoaderManager.Instance.ScoreStoreTame(score);
+        SceneLoaderManager.Instance?.ScoreStoreTame(score);
     }
     
 }
