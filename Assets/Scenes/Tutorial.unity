@@ -26,7 +26,7 @@ RenderSettings:
   m_AmbientIntensity: 1
   m_AmbientMode: 0
   m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
-  m_SkyboxMaterial: {fileID: 10304, guid: 0000000000000000f000000000000000, type: 0}
+  m_SkyboxMaterial: {fileID: 2100000, guid: fccbea1ade85a4c4fbadc1211f820160, type: 2}
   m_HaloStrength: 0.5
   m_FlareStrength: 1
   m_FlareFadeSpeed: 3
@@ -603,8 +603,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4281479730
-  m_fontColor: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+    rgba: 4278190080
+  m_fontColor: {r: 0, g: 0, b: 0, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -621,8 +621,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 24
-  m_fontSizeBase: 24
+  m_fontSize: 26.23
+  m_fontSizeBase: 26.23
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -1163,6 +1163,81 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::FadeInFadeOutText
   text: {fileID: 734369158}
   duration: 1.4
+--- !u!1 &847108650
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 847108651}
+  - component: {fileID: 847108653}
+  - component: {fileID: 847108652}
+  m_Layer: 5
+  m_Name: Image
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &847108651
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 847108650}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1176990140}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -296, y: 166}
+  m_SizeDelta: {x: 101, y: 50.5}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &847108652
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 847108650}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 21300000, guid: e319f6d4ab2644880ab85f2ab9f1e7f6, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &847108653
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 847108650}
+  m_CullTransparentMesh: 1
 --- !u!1 &943572892
 GameObject:
   m_ObjectHideFlags: 0
@@ -1314,8 +1389,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 2.340642, y: 1, z: 2.3621385}
+  m_Center: {x: 0.6703211, y: 0, z: 0.68106866}
 --- !u!23 &976056759
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -1447,8 +1522,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: When we succeed in a show, the city folk helps us fix the compass. We put
-    the fixes on tickets. To keep the circus spirit. Activate the ticket!
+  m_text: Successfull show equals compass fixes. They help with driving. Not that
+    you need any help, of course. You can find them on the ticket strip. Try activaitng
+    one.
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 2472c6d80366f4ec386ed2c7d94fd232, type: 2}
   m_sharedMaterial: {fileID: 2798682862021318641, guid: 2472c6d80366f4ec386ed2c7d94fd232, type: 2}
@@ -1640,6 +1716,8 @@ RectTransform:
   - {fileID: 1977771963}
   - {fileID: 1848488387}
   - {fileID: 1414264311}
+  - {fileID: 847108651}
+  - {fileID: 1783788571}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -2015,6 +2093,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::CompassMovement
   cityHitPublisher: {fileID: 0}
   tutorialPublisher: {fileID: 1246490483}
+  minimumSpeed: 175
+  maximumSpeed: 250
 --- !u!114 &1246490481
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2431,8 +2511,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -37.1, y: -195.1}
-  m_SizeDelta: {x: 167.98, y: 133.16}
+  m_AnchoredPosition: {x: -190, y: 165}
+  m_SizeDelta: {x: 101, y: 50.5}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1414264312
 MonoBehaviour:
@@ -2463,10 +2543,10 @@ MonoBehaviour:
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
   m_SpriteState:
-    m_HighlightedSprite: {fileID: 21300000, guid: 50b3e9f0ac4c540d48e3d337ad43285b, type: 3}
-    m_PressedSprite: {fileID: 21300000, guid: c5b80e34eaae54f4d96fef8514296ce1, type: 3}
-    m_SelectedSprite: {fileID: 0}
-    m_DisabledSprite: {fileID: 0}
+    m_HighlightedSprite: {fileID: 21300000, guid: 22ba835622bc443d5ac91fe7ca5a0cde, type: 3}
+    m_PressedSprite: {fileID: 21300000, guid: 35a2f33b148c74d08b99b77e651e0e69, type: 3}
+    m_SelectedSprite: {fileID: 21300000, guid: 35a2f33b148c74d08b99b77e651e0e69, type: 3}
+    m_DisabledSprite: {fileID: 21300000, guid: 03999a1f2c6a44b06bdd39e10902a6f2, type: 3}
   m_AnimationTriggers:
     m_NormalTrigger: Normal
     m_HighlightedTrigger: Highlighted
@@ -2522,7 +2602,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 5201fe024515c4e47bafe7dd9742953b, type: 3}
+  m_Sprite: {fileID: 21300000, guid: e319f6d4ab2644880ab85f2ab9f1e7f6, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -2768,6 +2848,81 @@ MonoBehaviour:
   wobbleVibrato: 2
   wobbleDuration: 3
   powerActive: 0
+--- !u!1 &1783788570
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1783788571}
+  - component: {fileID: 1783788573}
+  - component: {fileID: 1783788572}
+  m_Layer: 5
+  m_Name: Image (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1783788571
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1783788570}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1176990140}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -403, y: 166}
+  m_SizeDelta: {x: 101, y: 50.5}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1783788572
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1783788570}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 21300000, guid: e319f6d4ab2644880ab85f2ab9f1e7f6, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &1783788573
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1783788570}
+  m_CullTransparentMesh: 1
 --- !u!1 &1848488386
 GameObject:
   m_ObjectHideFlags: 0
@@ -2804,8 +2959,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -169.57, y: -195.1}
-  m_SizeDelta: {x: 167.9863, y: 133.1642}
+  m_AnchoredPosition: {x: -171.46, y: -189}
+  m_SizeDelta: {x: 100.7357, y: 50.5204}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1848488388
 MonoBehaviour:
@@ -2836,10 +2991,10 @@ MonoBehaviour:
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
   m_SpriteState:
-    m_HighlightedSprite: {fileID: 21300000, guid: 50b3e9f0ac4c540d48e3d337ad43285b, type: 3}
-    m_PressedSprite: {fileID: 21300000, guid: c5b80e34eaae54f4d96fef8514296ce1, type: 3}
-    m_SelectedSprite: {fileID: 0}
-    m_DisabledSprite: {fileID: 0}
+    m_HighlightedSprite: {fileID: 21300000, guid: 22ba835622bc443d5ac91fe7ca5a0cde, type: 3}
+    m_PressedSprite: {fileID: 21300000, guid: 35a2f33b148c74d08b99b77e651e0e69, type: 3}
+    m_SelectedSprite: {fileID: 21300000, guid: 35a2f33b148c74d08b99b77e651e0e69, type: 3}
+    m_DisabledSprite: {fileID: 21300000, guid: 03999a1f2c6a44b06bdd39e10902a6f2, type: 3}
   m_AnimationTriggers:
     m_NormalTrigger: Normal
     m_HighlightedTrigger: Highlighted
@@ -2895,7 +3050,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 5201fe024515c4e47bafe7dd9742953b, type: 3}
+  m_Sprite: {fileID: 21300000, guid: e319f6d4ab2644880ab85f2ab9f1e7f6, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -3064,10 +3219,10 @@ RectTransform:
   - {fileID: 1312644013}
   m_Father: {fileID: 1176990140}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -127, y: 134}
-  m_SizeDelta: {x: 528.7092, y: 418.8928}
+  m_AnchorMin: {x: 0.38750002, y: 0.61333334}
+  m_AnchorMax: {x: 0.9850001, y: 0.9755556}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1977771964
 MonoBehaviour:
@@ -3089,7 +3244,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: b0e1a7983682b41dd9762089183b50d9, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 76717ca49480540d794eb2eaa350ecba, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -3284,16 +3439,16 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2039166844}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0.38268343, w: 0.92387956}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1414264311}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 45}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: -7, y: 4}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2039166846
@@ -3316,7 +3471,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: SW
+  m_text: "\u2190"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 5d45bdaaaeb0640e7959b19e6429b8ec, type: 2}
   m_sharedMaterial: {fileID: 697026618945793738, guid: 5d45bdaaaeb0640e7959b19e6429b8ec, type: 2}
@@ -3343,13 +3498,13 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 24
-  m_fontSizeBase: 24
+  m_fontSize: 52.2
+  m_fontSizeBase: 52.2
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 0
+  m_fontStyle: 1
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 512
   m_textAlignment: 65535
