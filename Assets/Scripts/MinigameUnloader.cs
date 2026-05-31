@@ -4,11 +4,15 @@ using UnityEngine;
 public class MinigameUnloader : MonoBehaviour
 {
     [SerializeField] private float delay = 1;
-
+    private bool ended = false;
     public void EndPopcornGame(int score)
     {
+        if(ended) return;
+        ended = true;
         if (SceneLoaderManager.Instance != null)
         {
+            SceneLoaderManager.Instance.AddToMiniGamesEnded();
+            SceneLoaderManager.Instance?.StopMinigameMusic();
              StartCoroutine(EndPopcorn(score));
         }
     }
@@ -20,8 +24,12 @@ public class MinigameUnloader : MonoBehaviour
     }
     public void EndClownSaysGame(int score)
     {
+         if(ended) return;
+        ended = true;
         if (SceneLoaderManager.Instance != null)
         {
+            SceneLoaderManager.Instance.AddToMiniGamesEnded();
+            SceneLoaderManager.Instance?.StopMinigameMusic();
             StartCoroutine(EndSays(score));
         }
     }
@@ -33,8 +41,12 @@ public class MinigameUnloader : MonoBehaviour
     }
     public void EndTinCanGame(int score)
     {
+        if(ended) return;
+        ended = true;
         if (SceneLoaderManager.Instance != null)
         {
+            SceneLoaderManager.Instance.AddToMiniGamesEnded();
+            SceneLoaderManager.Instance?.StopMinigameMusic();
             StartCoroutine(EndTin(score));
         }
     }
@@ -46,8 +58,13 @@ public class MinigameUnloader : MonoBehaviour
     }
     public void EndTameGame(float score)
     {
+        if(ended) return;
+        ended = true;
         if (SceneLoaderManager.Instance != null)
         {
+            
+            SceneLoaderManager.Instance.AddToMiniGamesEnded();
+            SceneLoaderManager.Instance?.StopMinigameMusic();
             StartCoroutine(EndTame(score));
         }
     }

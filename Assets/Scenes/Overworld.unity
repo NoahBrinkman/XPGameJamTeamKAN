@@ -1500,6 +1500,17 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 714691845}
   m_CullTransparentMesh: 1
+--- !u!114 &760414100 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2974294072056502690, guid: f6f12bda90907944d9d2d6b3fff025f1, type: 3}
+  m_PrefabInstance: {fileID: 4138871535775418935}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8c7216ff1a88a2a4781a64270cf7f8a4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::MusicHandler
 --- !u!1 &764199261
 GameObject:
   m_ObjectHideFlags: 0
@@ -5665,9 +5676,77 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2906960068375274893, guid: f6f12bda90907944d9d2d6b3fff025f1, type: 3}
+      propertyPath: onPublished.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2906960068375274893, guid: f6f12bda90907944d9d2d6b3fff025f1, type: 3}
+      propertyPath: onPublished.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2906960068375274893, guid: f6f12bda90907944d9d2d6b3fff025f1, type: 3}
+      propertyPath: onPublished.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 760414100}
+    - target: {fileID: 2906960068375274893, guid: f6f12bda90907944d9d2d6b3fff025f1, type: 3}
+      propertyPath: onPublished.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2906960068375274893, guid: f6f12bda90907944d9d2d6b3fff025f1, type: 3}
+      propertyPath: onPublished.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: FadeInOverworldAgain
+      objectReference: {fileID: 0}
+    - target: {fileID: 2906960068375274893, guid: f6f12bda90907944d9d2d6b3fff025f1, type: 3}
+      propertyPath: onPublished.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: MusicHandler, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 2906960068375274893, guid: f6f12bda90907944d9d2d6b3fff025f1, type: 3}
+      propertyPath: onPublished.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 3088090511654301967, guid: f6f12bda90907944d9d2d6b3fff025f1, type: 3}
       propertyPath: m_Name
       value: SceneLoaderManager
+      objectReference: {fileID: 0}
+    - target: {fileID: 3787677259210330899, guid: f6f12bda90907944d9d2d6b3fff025f1, type: 3}
+      propertyPath: callBack.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3787677259210330899, guid: f6f12bda90907944d9d2d6b3fff025f1, type: 3}
+      propertyPath: callBack.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3787677259210330899, guid: f6f12bda90907944d9d2d6b3fff025f1, type: 3}
+      propertyPath: callBack.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 760414100}
+    - target: {fileID: 3787677259210330899, guid: f6f12bda90907944d9d2d6b3fff025f1, type: 3}
+      propertyPath: callBack.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3787677259210330899, guid: f6f12bda90907944d9d2d6b3fff025f1, type: 3}
+      propertyPath: callBack.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: StopMinigame
+      objectReference: {fileID: 0}
+    - target: {fileID: 3787677259210330899, guid: f6f12bda90907944d9d2d6b3fff025f1, type: 3}
+      propertyPath: callBack.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: MusicHandler, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 3787677259210330899, guid: f6f12bda90907944d9d2d6b3fff025f1, type: 3}
+      propertyPath: callBack.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 3879593151165140424, guid: f6f12bda90907944d9d2d6b3fff025f1, type: 3}
+      propertyPath: onPublished.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 760414100}
+    - target: {fileID: 3879593151165140424, guid: f6f12bda90907944d9d2d6b3fff025f1, type: 3}
+      propertyPath: onPublished.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: FadeOverWorldOut
+      objectReference: {fileID: 0}
+    - target: {fileID: 4121429269357263960, guid: f6f12bda90907944d9d2d6b3fff025f1, type: 3}
+      propertyPath: Loop
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5038933113367582528, guid: f6f12bda90907944d9d2d6b3fff025f1, type: 3}
       propertyPath: m_LocalPosition.x

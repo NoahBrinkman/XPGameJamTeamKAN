@@ -134,7 +134,6 @@ public class SimonSays : MonoBehaviour
                 {
                     _finish.SetValue(0);
                     click.Disable();
-                    SceneLoaderManager.Instance?.ScoreStorer.SetClownSaysScore(0);
                     StartCoroutine(WaitAndFinish());
                 }
                 Debug.Log(_try);
@@ -147,7 +146,6 @@ public class SimonSays : MonoBehaviour
                 click.Disable();
                 _finish.SetValueAndPublish(1);
                 
-                SceneLoaderManager.Instance?.ScoreStorer.SetClownSaysScore(1);
                 foreach (var clown in clowns)
                 {
                     var currentPosition = clown.transform.position;
@@ -167,7 +165,6 @@ public class SimonSays : MonoBehaviour
     {
         yield return new WaitForSeconds(0.3f);
         _finish.Publish();
-        SceneLoaderManager.Instance?.UnloadMinigameScene();
     }
 
 }

@@ -19,25 +19,28 @@ public class SceneLoaderManager : Singleton<SceneLoaderManager>
     public MinigameScoreStorer ScoreStorer { get { return scoreStorer; } }
     private float sessionTimer = 0;
     public bool SessionStarted = false;
-    private int minigamesCompleted = 0;
+    [ReadOnly, SerializeField]private int minigamesCompleted = 0;
     [SerializeField] private int minigamesToComplete = 4;
     public float SessionTime {get { return sessionTimer; } }
+    [SerializeField] private MusicHandler musicHandler;
     private void Awake()
     {
         InitializeSingleton();
     }
 
-
+    
     public void ResetSession()
     {
         sessionTimer = 0;
         SessionStarted = false;
         minigamesCompleted = 0;
         minigamesToComplete = 4;
+        musicHandler.ResetMusic();
     }
     public void ScoreStoreTinCan(int score)
     {
         scoreStorer.SetTinCanScore(score);
+        musicHandler.StopMinigame();
         UnloadMinigameScene();
     }
 
@@ -46,21 +49,28 @@ public class SceneLoaderManager : Singleton<SceneLoaderManager>
         sessionTimer += Time.deltaTime;
     }
 
+    public void StopMinigameMusic()
+    {
+        musicHandler.StopMinigame();
+    }
     public void ScoreStoreClownSays(int score)
     {
         scoreStorer.SetClownSaysScore(score);
+    
         UnloadMinigameScene();
     }
 
     public void ScoreStorePopcorn(int score)
     {
         scoreStorer.SetPopcornScore(score);
+        musicHandler.StopMinigame();
         UnloadMinigameScene();
     }
 
     public void ScoreStoreTame(float score)
     {
         scoreStorer.SetTamingScore(score);
+        musicHandler.StopMinigame();
         UnloadMinigameScene();
     }
 
@@ -96,7 +106,10 @@ public class SceneLoaderManager : Singleton<SceneLoaderManager>
         }
         yield return SceneManager.LoadSceneAsync(sceneName, keepCurrentSceneLoaded ? LoadSceneMode.Additive : LoadSceneMode.Single);
         SceneManager.SetActiveScene(SceneManager.GetSceneByName(sceneName));
-    
+        if (keepCurrentSceneLoaded && sceneName == currentMinigameScene)
+        {
+            musicHandler.StartMinigameMusic();
+        }
         transitionHandler.FadeToTransparent();
         yield return new WaitForSeconds(transitionHandler.Duration);
         
@@ -107,6 +120,7 @@ public class SceneLoaderManager : Singleton<SceneLoaderManager>
         if (!keepCurrentSceneLoaded && sceneName == overWorldScene)
         {
             SessionStarted = true;
+            musicHandler.FadeInOverworldAgain();
         }
     }
 
@@ -119,10 +133,9 @@ public class SceneLoaderManager : Singleton<SceneLoaderManager>
     {
         transitionHandler.FadeToBlack();
         yield return new WaitForSeconds(transitionHandler.Duration);
-        minigamesCompleted++;
+
         if (minigamesCompleted < minigamesToComplete)
         {
-            SessionStarted = false;
             SceneManager.SetActiveScene(SceneManager.GetSceneByName(overWorldScene));
             yield return SceneManager.UnloadSceneAsync(currentMinigameScene);
             overworldSceneLoadedPublisher.Publish();
@@ -130,6 +143,8 @@ public class SceneLoaderManager : Singleton<SceneLoaderManager>
         }
         else
         {
+            
+            SessionStarted = false;
             yield return SceneManager.LoadSceneAsync(endScene, LoadSceneMode.Single);
         }
         
@@ -146,5 +161,11 @@ public class SceneLoaderManager : Singleton<SceneLoaderManager>
     public void StartSession()
     {
         SessionStarted = true;
+        musicHandler.FadeInOverworldAgain();
+    }
+
+    public void AddToMiniGamesEnded()
+    {
+        minigamesCompleted++;
     }
 }
