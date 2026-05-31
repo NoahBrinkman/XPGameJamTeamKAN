@@ -1342,8 +1342,8 @@ MonoBehaviour:
     sometimes help during the show. \nWe need to act quickly! We don't have much
     time to win the hearts of the fans in the whole world!"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 2472c6d80366f4ec386ed2c7d94fd232, type: 2}
-  m_sharedMaterial: {fileID: 2798682862021318641, guid: 2472c6d80366f4ec386ed2c7d94fd232, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: f31b02780a2294a8a8e011c67f2c1e73, type: 2}
+  m_sharedMaterial: {fileID: -8977675141065170555, guid: f31b02780a2294a8a8e011c67f2c1e73, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []

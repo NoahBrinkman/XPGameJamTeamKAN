@@ -182,8 +182,8 @@ MonoBehaviour:
     Spin it again and let''s
     drive!'
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 2472c6d80366f4ec386ed2c7d94fd232, type: 2}
-  m_sharedMaterial: {fileID: 2798682862021318641, guid: 2472c6d80366f4ec386ed2c7d94fd232, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: f31b02780a2294a8a8e011c67f2c1e73, type: 2}
+  m_sharedMaterial: {fileID: -8977675141065170555, guid: f31b02780a2294a8a8e011c67f2c1e73, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -334,8 +334,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: As you see, we always follow our compass. We do help it sometimes though.
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 2472c6d80366f4ec386ed2c7d94fd232, type: 2}
-  m_sharedMaterial: {fileID: 2798682862021318641, guid: 2472c6d80366f4ec386ed2c7d94fd232, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: f31b02780a2294a8a8e011c67f2c1e73, type: 2}
+  m_sharedMaterial: {fileID: -8977675141065170555, guid: f31b02780a2294a8a8e011c67f2c1e73, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -981,8 +981,8 @@ MonoBehaviour:
   m_text: "You press the button and it spins.\nThat's it. It's a compass, \nnot a
     rocketship."
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 2472c6d80366f4ec386ed2c7d94fd232, type: 2}
-  m_sharedMaterial: {fileID: 2798682862021318641, guid: 2472c6d80366f4ec386ed2c7d94fd232, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: f31b02780a2294a8a8e011c67f2c1e73, type: 2}
+  m_sharedMaterial: {fileID: -8977675141065170555, guid: f31b02780a2294a8a8e011c67f2c1e73, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1190,8 +1190,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: This is our CARavan. Small, comfy, perfect for a group of 20 clowns.
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 2472c6d80366f4ec386ed2c7d94fd232, type: 2}
-  m_sharedMaterial: {fileID: 2798682862021318641, guid: 2472c6d80366f4ec386ed2c7d94fd232, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: f31b02780a2294a8a8e011c67f2c1e73, type: 2}
+  m_sharedMaterial: {fileID: -8977675141065170555, guid: f31b02780a2294a8a8e011c67f2c1e73, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1774,8 +1774,8 @@ MonoBehaviour:
     you need any help, of course. You can find them on the ticket strip. Try activaitng
     one.
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 2472c6d80366f4ec386ed2c7d94fd232, type: 2}
-  m_sharedMaterial: {fileID: 2798682862021318641, guid: 2472c6d80366f4ec386ed2c7d94fd232, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: f31b02780a2294a8a8e011c67f2c1e73, type: 2}
+  m_sharedMaterial: {fileID: -8977675141065170555, guid: f31b02780a2294a8a8e011c67f2c1e73, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -2616,8 +2616,8 @@ MonoBehaviour:
   m_text: 'Spin the compass with the ticket to reach the city. Cities are our main
     objectives. That''s where we can present our acts. People looove animal taming! '
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 2472c6d80366f4ec386ed2c7d94fd232, type: 2}
-  m_sharedMaterial: {fileID: 2798682862021318641, guid: 2472c6d80366f4ec386ed2c7d94fd232, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: f31b02780a2294a8a8e011c67f2c1e73, type: 2}
+  m_sharedMaterial: {fileID: -8977675141065170555, guid: f31b02780a2294a8a8e011c67f2c1e73, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -3766,8 +3766,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: "Here you have the compass. \nLet's teach you how to use it."
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 2472c6d80366f4ec386ed2c7d94fd232, type: 2}
-  m_sharedMaterial: {fileID: 2798682862021318641, guid: 2472c6d80366f4ec386ed2c7d94fd232, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: f31b02780a2294a8a8e011c67f2c1e73, type: 2}
+  m_sharedMaterial: {fileID: -8977675141065170555, guid: f31b02780a2294a8a8e011c67f2c1e73, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []

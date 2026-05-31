@@ -1242,8 +1242,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Thanks to you they traveled the world in
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 2472c6d80366f4ec386ed2c7d94fd232, type: 2}
-  m_sharedMaterial: {fileID: 2798682862021318641, guid: 2472c6d80366f4ec386ed2c7d94fd232, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: f31b02780a2294a8a8e011c67f2c1e73, type: 2}
+  m_sharedMaterial: {fileID: -8977675141065170555, guid: f31b02780a2294a8a8e011c67f2c1e73, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1405,8 +1405,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: 00:00:00
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 2472c6d80366f4ec386ed2c7d94fd232, type: 2}
-  m_sharedMaterial: {fileID: 2798682862021318641, guid: 2472c6d80366f4ec386ed2c7d94fd232, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: f31b02780a2294a8a8e011c67f2c1e73, type: 2}
+  m_sharedMaterial: {fileID: -8977675141065170555, guid: f31b02780a2294a8a8e011c67f2c1e73, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -2641,8 +2641,8 @@ MonoBehaviour:
     Your performance
     was truly spectacular spectacular.'
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 2472c6d80366f4ec386ed2c7d94fd232, type: 2}
-  m_sharedMaterial: {fileID: 2798682862021318641, guid: 2472c6d80366f4ec386ed2c7d94fd232, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: f31b02780a2294a8a8e011c67f2c1e73, type: 2}
+  m_sharedMaterial: {fileID: -8977675141065170555, guid: f31b02780a2294a8a8e011c67f2c1e73, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
