@@ -526,6 +526,10 @@ PrefabInstance:
       propertyPath: overrideEventNameSelection
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 5308025819395459560, guid: 4bab1d591de2551498375b6c0b06a397, type: 3}
+      propertyPath: callBack.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: EndClownSaysGame
+      objectReference: {fileID: 0}
     - target: {fileID: 8436309674357797296, guid: 4bab1d591de2551498375b6c0b06a397, type: 3}
       propertyPath: m_LocalPosition.x
       value: 156.67163
