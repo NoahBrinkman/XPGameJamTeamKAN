@@ -12,9 +12,7 @@ public class MusicHandler : MonoBehaviour
     {
         if (overWorldMusic.isPlaying)
         {
-            var sequence = DOTween.Sequence()
-                .Append(DOTween.To(() => overWorldMusic.volume, x => overWorldMusic.volume = x, 0f, .3f))
-                .OnComplete(overWorldMusic.Pause);
+            overWorldMusic.Pause();
         }
     }
 
@@ -26,9 +24,6 @@ public class MusicHandler : MonoBehaviour
         {
             overWorldMusic.Play();
         }
-
-        var sequence = DOTween.Sequence()
-            .Append(DOTween.To(() => overWorldMusic.volume, x => overWorldMusic.volume = x, 1f, .5f));
     }
 
     public void StartMinigameMusic()

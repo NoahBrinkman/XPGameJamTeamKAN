@@ -168,4 +168,9 @@ public class SceneLoaderManager : Singleton<SceneLoaderManager>
     {
         minigamesCompleted++;
     }
+
+    public void ResumeOverworldMusic()
+    {
+        musicHandler.FadeInOverworldAgain();
+    }
 }

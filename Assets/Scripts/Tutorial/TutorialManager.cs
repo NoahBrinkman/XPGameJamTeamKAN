@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using DG.Tweening;
+using MyBox;
 using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
@@ -20,8 +21,8 @@ public class TutorialManager : MonoBehaviour
     [SerializeField] private TMP_Text powerupText;
     [SerializeField] private GameObject powerBtn;
     [SerializeField] private TMP_Text cityTxt;
-
-    private float _fadeDuration = 1.5f;
+    [SerializeField,Scene] private string sceneToLoadAfterTutorial;
+    [SerializeField] private float _fadeDuration = 1.5f;
     private int _spinCount;
 
     private void Awake()
@@ -89,7 +90,11 @@ public class TutorialManager : MonoBehaviour
             _spinCount = 2;
         }
     }
-    
+
+    public void FinishTutorial()
+    {
+        SceneLoaderManager.Instance.GoToScene(sceneToLoadAfterTutorial);
+    }
     
     public void ActivateCity()
     {
