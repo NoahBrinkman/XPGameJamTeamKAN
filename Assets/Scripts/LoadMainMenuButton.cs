@@ -22,7 +22,7 @@ public class LoadMainMenuButton : MonoBehaviour
         else
         {
             SceneLoaderManager.Instance.ResetSession();
-            SceneLoaderManager.Instance.LoadSceneAsync(mainMenuSceneName, false);
+            SceneLoaderManager.Instance.GoToScene(mainMenuSceneName);
         }
     }
 }

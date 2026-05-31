@@ -66,6 +66,7 @@ public class SceneLoaderManager : Singleton<SceneLoaderManager>
 
     public void GoToScene(string sceneName)
     {
+        
         StartCoroutine(LoadSceneInAsync(sceneName, false));
     }
     
@@ -93,21 +94,20 @@ public class SceneLoaderManager : Singleton<SceneLoaderManager>
         {
             overworldSceneUnLoadedPublisher.Publish();
         }
-        yield return SceneManager.LoadSceneAsync(sceneName, LoadSceneMode.Additive);
+        yield return SceneManager.LoadSceneAsync(sceneName, keepCurrentSceneLoaded ? LoadSceneMode.Additive : LoadSceneMode.Single);
         SceneManager.SetActiveScene(SceneManager.GetSceneByName(sceneName));
-        
-        if (!keepCurrentSceneLoaded)
-        {
-            if (currentMinigameScene != "")
-            {
-                yield return SceneManager.UnloadSceneAsync(currentMinigameScene);
-            }
-        }   
+    
         transitionHandler.FadeToTransparent();
         yield return new WaitForSeconds(transitionHandler.Duration);
         
         yield return new WaitForSeconds(delaybeforeStart);
         startMinigamePublisher.Publish();
+
+
+        if (!keepCurrentSceneLoaded && sceneName == overWorldScene)
+        {
+            SessionStarted = true;
+        }
     }
 
     public void UnloadMinigameScene()
@@ -119,6 +119,7 @@ public class SceneLoaderManager : Singleton<SceneLoaderManager>
     {
         transitionHandler.FadeToBlack();
         yield return new WaitForSeconds(transitionHandler.Duration);
+        minigamesCompleted++;
         if (minigamesCompleted < minigamesToComplete)
         {
             SessionStarted = false;
