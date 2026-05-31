@@ -14,6 +14,7 @@ public class EndScreen : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        SceneLoaderManager.Instance?.ResumeOverworldMusic();
         DirectorDance();
         StartCoroutine(YankLoop(clown1, new Vector3(-9.02f, 7.42f, -5.73f), new Vector3(-6.63f, 5.01f, -3.900f),
             5f, 1f, 3f, 1f));
