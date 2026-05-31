@@ -11,6 +11,6 @@ public class ShotsLeftTextSetter : MonoBehaviour
         {
             t= GetComponent<TMP_Text>();
         }    
-        t.text = $"Shots left: {amountLeft}/5";
+        t.text = $"Shots left: \n {amountLeft}";
     }
 }
