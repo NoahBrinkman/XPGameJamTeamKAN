@@ -914,6 +914,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Compass
       objectReference: {fileID: 0}
+    - target: {fileID: 1922857189051101069, guid: 8a3da108b2b8ba04fa9a320533087568, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 2327fc3b2457f5541b301214dbf5376a, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects:
     - {fileID: 8977350125281115088, guid: 8a3da108b2b8ba04fa9a320533087568, type: 3}
