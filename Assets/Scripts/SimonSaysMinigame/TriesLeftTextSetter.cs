@@ -11,6 +11,6 @@ public class TriesLeftTextSetter : MonoBehaviour
         {
             t= GetComponent<TMP_Text>();
         }    
-        t.text = $"Tries left: {amountLeft}";
+        t.text = $"Tries left \n {amountLeft}";
     }
 }
