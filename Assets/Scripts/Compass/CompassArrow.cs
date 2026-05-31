@@ -34,6 +34,12 @@ public class Compass : MonoBehaviour
     private Sequence _pendulumSequence;
     private FloatPublisher _newAngle;
 
+
+    [FormerlySerializedAs("spinning")] [Header("Sound effects")] [SerializeField]
+    private AudioSource spingSound;
+
+    [SerializeField] private AudioSource ding;
+    
     private bool angleChanged = false;
     
     private void Awake()
@@ -56,6 +62,11 @@ public class Compass : MonoBehaviour
         {
             SceneLoaderManager.Instance?.ScoreStorer.ResetScores();
         }
+
+        if (spingSound != null)
+        {
+            spingSound.Play();
+        }
         spinButton.interactable = false;
         if(powerActive)
         {   
@@ -75,7 +86,7 @@ public class Compass : MonoBehaviour
 
         float finalAngle = Random.Range(pendulumMinAngle, pendulumMaxAngle);
         Debug.Log($"Final angle pendulum: {finalAngle}");
-
+    
         float finalSpeed = Mathf.Max(
             0.05f,
             (finalAngle - pendulumMinAngle) * pendulumDuration /
@@ -140,6 +151,7 @@ public class Compass : MonoBehaviour
             _spinSequence.Kill();
 
         float finalAngle = Random.Range(0f, 360f);
+    
         int spins = Random.Range(minSpins, maxSpins + 1);
 
         float totalAngle = (360f * spins) + finalAngle;
@@ -164,6 +176,8 @@ public class Compass : MonoBehaviour
 
     private void PublishAngle()
     {
+        spingSound.Stop();
+        ding.Play();
         _newAngle.SetValue(transform.localEulerAngles.z);
         _newAngle.Publish();
         spinButton.interactable = true;
