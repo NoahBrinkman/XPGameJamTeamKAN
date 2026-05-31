@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using DG.Tweening;
+using MyBox;
 using TMPro;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -23,6 +24,11 @@ public class MainMenu : MonoBehaviour
 
     [SerializeField] private Transform directorGoal;
 
+    [SerializeField, Scene] private string overworldScene;
+    [SerializeField, Scene] private string tutorialScene;
+
+    
+    
     private bool _isTutorial;
     
 
@@ -60,10 +66,12 @@ public class MainMenu : MonoBehaviour
         if (_isTutorial)
         {
             //StartTutorial
+            SceneLoaderManager.Instance.GoToScene(tutorialScene);
         }
         else
         {
             //StartGame
+            SceneLoaderManager.Instance.GoToScene(overworldScene);
         }
     }
 

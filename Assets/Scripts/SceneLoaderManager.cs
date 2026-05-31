@@ -93,16 +93,9 @@ public class SceneLoaderManager : Singleton<SceneLoaderManager>
         {
             overworldSceneUnLoadedPublisher.Publish();
         }
-        yield return SceneManager.LoadSceneAsync(sceneName, LoadSceneMode.Additive);
+        yield return SceneManager.LoadSceneAsync(sceneName, keepCurrentSceneLoaded ? LoadSceneMode.Additive : LoadSceneMode.Single);
         SceneManager.SetActiveScene(SceneManager.GetSceneByName(sceneName));
-        
-        if (!keepCurrentSceneLoaded)
-        {
-            if (currentMinigameScene != "")
-            {
-                yield return SceneManager.UnloadSceneAsync(currentMinigameScene);
-            }
-        }   
+    
         transitionHandler.FadeToTransparent();
         yield return new WaitForSeconds(transitionHandler.Duration);
         
