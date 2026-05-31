@@ -15,8 +15,8 @@ public class FinishTextHandler : MonoBehaviour
     {
         if (SceneLoaderManager.Instance != null)
         {
-            text.text =
-                $"You finished with the following time: {TimeSpan.FromSeconds(SceneLoaderManager.Instance.SessionTime)}";
+            TimeSpan t = TimeSpan.FromSeconds(SceneLoaderManager.Instance.SessionTime);
+            text.text = string.Format("{0:D2}m:{1:D2}s:{2:D2}ms", t.Minutes, t.Seconds, t.Milliseconds);
         }
     }
 }
