@@ -962,9 +962,9 @@ MonoBehaviour:
   pendulumWobbleDur: 0.2
   pendulumMinAngle: 180
   pendulumMaxAngle: 360
-  wobbleStrength: 10
-  wobbleVibrato: 2
-  wobbleDuration: 3
+  wobbleStrength: 15
+  wobbleVibrato: 4
+  wobbleDuration: 1
   powerActive: 0
 --- !u!114 &389330812
 MonoBehaviour:
